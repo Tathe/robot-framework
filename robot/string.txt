@@ -1,0 +1,40 @@
+*** Settings ***
+Library    String
+
+*** Variables ***
+${b}   one
+${c}   1
+${str}   Hii\nBye
+
+*** Keywords ***
+function for demo
+        Log     hello
+
+*** Testcases ***
+Lower case
+  ${str} =	Convert To Lowercase	ABC
+  Log  ${str}
+
+Upper case
+   ${msg}=   Convert To Uppercase   abc
+   Log  ${msg}
+
+Get line
+    ${result}=  Get Line Count   ${str}
+    Log   ${result}  
+
+Substring
+   ${result}=  Get Substring  Helllooo  0  2
+   Log  ${result} 
+
+Remove substring
+    ${result}=  Remove String  Helllooo   oo
+    Log  ${result}
+
+String
+    ${result}=   Should Be String   ${b}  
+    Log  ${result}
+
+Line contain string
+   ${result}=    Get Lines Containing String   Hii\n12\n'jdh'   Hii
+   Log  ${result}
