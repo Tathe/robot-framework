@@ -1,0 +1,38 @@
+*** Setting ***
+Library  String
+
+*** Variables ***
+${name}  Yugal\Pachpande
+
+*** Keywords ***
+
+
+
+*** Testcases ***
+Get Line Case
+	[Tags]  Get_line
+	Get Line Count  ${name}
+	log  ${name}
+
+Get Line Cointaining String Case
+	[Tags]  Get_line_cointaining_string
+	Get Lines Containing String  ${name}  Yugal
+
+Get Substring Case
+	[Tags]  Get_substring
+	${substring}  Get Substring  ${name}  2
+	log  ${substring}
+
+Remove String Case
+	[Tags]  Remove_string
+	${rmv_str}  Remove String  ${name}  Pachpande
+	log  ${rmv_str}
+
+Should Be String Case
+	[Tags]  Should_be_string
+	Should Be String  1
+
+Lower Case
+	[Tags]  Lower_to_str
+	${lower_case}  Convert To LowerCase  ${name}
+	log  ${lower_case}
