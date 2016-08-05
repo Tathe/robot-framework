@@ -52,6 +52,10 @@ Create Dictionary Test
        &{dict}  Create Dictionary  1=Yugal  2=Chetan
        log  ${dict}
 
+Create dict
+    [Tags]     dict
+    @{dic}=   Create Dictionary   foo=bar   cat=dog
+    LOG    ${dic}
 
 Evaluate Test
      [Tags]  Evaluate_test
@@ -60,7 +64,7 @@ Evaluate Test
 
 Evaluate
     [Tags]    evaluate
-    ${value}=  Evaluate  ${dict}.get("cat",{})
+    ${value}=  Evaluate  ${c}+${str1}
     LOG  ${value}
 
 Convert To Boolean Test
