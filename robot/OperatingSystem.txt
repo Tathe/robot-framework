@@ -1,0 +1,16 @@
+*** Setting ***
+Library  OperatingSystem
+
+*** Variable ***
+
+
+*** Keywords ***
+	
+ 
+*** Test Cases ***
+Append File Example
+	Create File  ${CURDIR}/a.txt    addffgfgg
+	Append To File  ${CURDIR}/a.txt    \nrgrgrgrg
+
+Copy File Example
+	Copy File  ${CURDIR}/b.txt  ${CURDIR}/c.txt	
