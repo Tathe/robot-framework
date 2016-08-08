@@ -90,6 +90,11 @@ Convert To String Test
        [Tags]  Cnvrt_str
        ${cnvrt_to_str}  Convert To String  ${str1}
 
+Create Dictionary Test
+       [Tags]  Create_dict
+       &{dict}  Create Dictionary  1=Yugal  2=Chetan
+       log  ${dict}
+
 Convert String
     [Tags]   string
     ${ans}=  Convert TO String  one
