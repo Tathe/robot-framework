@@ -58,15 +58,6 @@ class BinaryTree:
             return 1
 
 
-
-
-
-
-
-
-
-
-
 b=BinaryTree(10)
 b.add_node(15)
 b.add_node(11)
