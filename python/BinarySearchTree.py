@@ -58,6 +58,15 @@ class BinaryTree:
             return 1
 
 
+
+
+
+
+
+
+
+
+
 b=BinaryTree(10)
 b.add_node(15)
 b.add_node(11)
@@ -72,4 +81,3 @@ print "Postorder traversal"
 b.bst_postorder_traversal(b.root)
 print "Inorder traversal"
 b.bst_inorder_traversal(b.root)
-
