@@ -1,0 +1,57 @@
+*** Setting ***
+Library  Collections
+
+*** Variable ***
+${str}  amitpatil
+
+*** Keywords ***
+ 
+*** Test Cases ***
+Append to list Example
+	${L1}=  Create List  80  100  120
+	Log  ${L1}	
+	${L2}=  Create List  20  40  60
+	Log  ${L2}
+	${L3}=  Append to List  ${L1}  ${L2}
+	Log  ${L1}
+
+
+Combine to list Example
+	${X}  Create List  20  40  60
+        ${Y}  Create List  80 100  120
+	${Z}=  Combine Lists  ${X}  ${Y}
+	Log  ${Z}
+	
+
+Covert to list Example
+	${str}  Convert To List  amitpatil
+	Log  ${str}
+	
+
+Dictionary Example
+	${dict}  Create Dictionary  Name=Amit  Age=29  Company=Opcito      
+       	${dict1}  Create Dictionary  Name=Amit  Age=29  Company=Opcito 
+	Dictionaries Should Be Equal  ${dict1}  ${dict1}
+	
+
+list Example
+	${a}  Create List  amit  patil  pune
+        ${b}  Create List  amit  patil  pune
+	Lists Should Be Equal  ${a}  ${b}
+
+Remove value from list Example
+	${x}  Create List  10  20  30  40  
+        Remove Values From List  ${x}  30  40
+	Log  ${x}
+	
+
+Reverse List Example
+	${x}  Create List  10  20  30  40  50
+        Reverse List  ${x}  
+	Log  ${x}
+	
+
+Sort List Example
+	${z}  Create List  30  10  40  20  60
+        Sort List  ${z}  
+	Log  ${z}
