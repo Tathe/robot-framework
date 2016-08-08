@@ -1,0 +1,14 @@
+*** Setting ***
+Library  Login.py
+
+*** Variable ***
+
+
+*** Keywords ***
+	
+	
+ 
+*** Test Cases ***
+message Example
+	${Message}=  get_message  Hello	
+	Log  ${Message}
