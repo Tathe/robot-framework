@@ -1,0 +1,27 @@
+*** Settings ***
+Library  OperatingSystem
+
+
+*** Variables ***
+${path}  /home/chandan/Desktop/TestCase.txt
+${copy_to}  /home/chandan/Desktop/Copy_TestCase.txt
+
+
+
+*** Keywords ***
+
+
+
+*** Testcases ***
+Append To File Case
+	[Tags]  Append_to_file
+	Append To File  ${path}  Hiii
+
+Copy File Case
+	[Tags]  Copy_file
+	Copy File  ${path}  ${copy_to}
+
+Get File Case
+	[Tags]  Get_file
+	${infile}  Get File  ${path} 
+	log  ${infile}

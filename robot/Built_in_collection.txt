@@ -1,0 +1,53 @@
+*** Setting ***
+Library  Collections
+
+*** Variables ***
+${name}  Yugal
+${surname}  Pachpande
+@{list1}  1  2  3  4  5
+@{list2}  6  7
+
+
+*** Keywords ***
+
+
+*** Testcases ***
+Append To List Case
+	[Tags]  Append_to_list
+	Append To List    ${list1}    a
+	log  ${list1}
+
+Combine List Case
+	[Tags]  Combine_list
+	${combine_list}  Combine Lists  ${list1}  ${list2}
+ 	log  ${combine_list}
+
+Convert To list Case
+	[Tags]  Covert_to_list
+	${cnvrt_to_list}  Convert To List  ${name}
+	log  ${cnvrt_to_list}
+
+List Should Be Equal Test
+	[Tags]  List_should_be_equal
+	Lists Should Be Equal  ${name}  Yugal
+
+
+Dictionary Should Be equal Test
+	[Tags]  Dictionary_should_be_equal
+	&{dict}  Create Dictionary  1=a  2=b
+	&{dict1}  Create Dictionary  1=a  2=b
+                Dictionaries Should Be Equal  ${dict}  ${dict1}
+
+
+Remove From List Case
+	[Tags]  Remove_from_list
+	${list1}  Remove From List  ${list1}  5
+	log  ${list1}
+
+Reverse List Case
+	[Tags]  Reverse_list
+	Reverse List  ${list1}
+
+Sort List Case
+	[Tags]  Sort_list
+	Sort List  ${list1}
