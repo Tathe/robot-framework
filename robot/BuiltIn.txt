@@ -1,0 +1,166 @@
+*** Setting***
+
+*** Variable***
+${str}  Hello Word
+${result}  FF AA
+${var}
+${result}  6
+${result}  True
+${result}  1000
+${result}  255
+${result}  42.512
+${result}  10  
+&{dict}  Create Dictionary firstname=Amit Lastname=Patil  
+@{list}  Create List   10 20 30 
+${a}  3
+${b}  4 
+${str}  amitpatil
+${str}  amitpatilopcito 
+${str1}  hii
+${str2}  hello 
+${str1}  hello
+${str2}  hell
+${var1} 
+
+*** Keyword***
+Catenate method
+	Log  "Result"
+
+Convert To Integer Method
+	Log  "Result"
+
+Continue For Loop Method
+    :FOR    ${var}  IN  Amitpatil
+        Run Keyword If  '${var}'=   A
+        Log   ${var}
+
+Convert To Binary Method
+	Log  "Result"
+
+Convert To Boolean Method
+	Log  "Result"
+
+Convert To Bytes Method
+	Log  "Result"
+
+Convert To Hex Method
+	Log  "Result"
+
+Convert To Number Method
+	Log  "Result"
+
+Convert To Octal Method
+	Log  "Result"
+
+Create Dictionary Method
+	${var}=  Create Dictionary  firstname=Amit Lastname=Patil
+	Log  ${var}
+
+Create List Method
+	${var}=  Create List  10 20 30
+	Log  ${var}
+
+Evaluate Method
+    ${aa}=  convert to number  ${a}
+    ${bb}=  convert to number  ${b}
+    ${c}=   Evaluate    ${aa}*${bb}
+    Log  ${c}
+
+Count Method
+	${var}  Get Count  ${str}  i 
+	Log  ${var}
+
+Length Method
+	${var}  Get Length  ${str}    
+	Log  ${var}
+
+Logtoconsole Method
+	Log To Console  Hello world
+
+Run Keyword Method
+	Log  Hello world
+
+Run Failure Method
+	Log  result
+
+Should be empty method
+	Should be empty  ${var1}
+
+should be equal Method
+	Should be equal  ${a}  ${b}
+
+should be true Method
+	Should be true  ${a}<${b}
+	
+
+*** Test Cases***
+Catenate Example
+	Catenate method
+
+Convert To Integers Example
+	Convert To Integer Method
+
+Continue For Loop Example
+	Continue For Loop Method
+
+Convert To Binary Example
+	${Var}=  Convert To Binary  6
+	Log  ${Var}
+
+Convert To Boolean Example
+	${var}  Convert To Boolean  10
+	Log  ${var}
+
+Convert To Bytes Example
+	${var}  Convert To Bytes  1000
+	Log  ${var}
+
+Convert To hex Example
+	${var}  Convert To Hex  255
+	Log  ${var}
+
+Convert To Number Example
+	${var}  Convert To Number  42.512  0
+	Log  ${var}
+
+Convert To Octal Example
+	${var}  Convert To Octal  10  
+	Log  ${var
+
+Create Dictionary Example
+	Create Dictionary Method
+	
+Create List Example
+        Create List Method
+
+Evaluate Example
+	Evaluate Method
+
+Count Example
+	Count Method
+
+Lenght Example
+	Length Method
+
+Logtoconsole Example
+	Logtoconsole Method
+
+Run Keyword Example
+	Run Keyword  Run Keyword Method
+
+Run Failure Example
+   	Run keyword And Continue On Failure  Should be equal  ${str1}  ${str2} 
+	Log  Countinue after failure
+
+Run expect Failure Example
+   	Run Keyword And Expect Error  Error occur  Should be equal  ${str1}  ${str2} 
+	Log  result
+
+Should be empty Example
+	Should be empty method
+
+should be equal Example
+	    should be equal Method
+
+should be true Example
+	    should be true Method
