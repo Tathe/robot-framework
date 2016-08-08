@@ -1,6 +1,11 @@
 *** Settings ***
+Library   BuiltIn
+Library   Collections
 
 *** Variables ***
+${a}   monitor
+${b}   one
+${c}   1
 ${str1}  1 
 ${str2}  world
 ${str3}  world
@@ -8,6 +13,8 @@ ${name}
 @{list_n}  1  2  3  4  5
 
 *** Keywords ***
+function for demo
+	Log	hello
 
 *** Testcases ***
 Catenate Test 
@@ -15,30 +22,69 @@ Catenate Test
        ${str3}=  Catenate  ${str1}  ${str2}
        log  ${str3}
 
+Catenate
+    [Tags]   catenate
+    ${str}=  Catenate  Hello  world
+    LOG    ${str}
+
 Set Variable Test
     [Tags]  Set_variable
     ${hi}  Set Variable  Hiii,
     log  ${hi}
+
+Set variable
+    [Tags]  set
+    ${a}=  Set Variable  mouse
+    LOG  ${a}   
 
 For Loop Test
      [Tags]  For_loop
      : FOR  ${var}  IN  @{list_n}
      \   log  ${var}
 
+Loop
+     :FOR    ${var}    IN    white    red
+     \    Continue For Loop
+     \    Fail
+
+Create Dictionary Test
+       [Tags]  Create_dict
+       &{dict}  Create Dictionary  1=Yugal  2=Chetan
+       log  ${dict}
+
+Create dict
+    [Tags]     dict
+    @{dic}=   Create Dictionary   foo=bar   cat=dog
+    LOG    ${dic}
+
 Evaluate Test
      [Tags]  Evaluate_test
      ${Status}  Evaluate  True
      log  ${Status}
 
+Evaluate
+    [Tags]    evaluate
+    ${value}=  Evaluate  ${c}+${str1}
+    LOG  ${value}
 
 Convert To Boolean Test
        [Tags]  Convrt_boolean
        ${str4}  Convert To Boolean  ${str1}
        log  ${str4}
 
+Convert Bool
+   [Tags]   bool
+   ${bool}=  Convert To Boolean  ${b}
+   Log  ${bool}
+
 Convert To Integer Test
        [Tags]  Convrt_int
        ${cnvrt_to_int}  Convert To Integer  100
+
+Convert Integer
+   [Tags]   int
+   ${ans}=  Convert To Integer  300
+   LOG  ${ans}
 
 Convert To String Test
        [Tags]  Cnvrt_str
@@ -48,6 +94,17 @@ Create Dictionary Test
        [Tags]  Create_dict
        &{dict}  Create Dictionary  1=Yugal  2=Chetan
        log  ${dict}
+
+Convert String
+    [Tags]   string
+    ${ans}=  Convert TO String  one
+    ${b}=  Convert To String  ${b}
+    Should Be Equal  ${ans}  ${b}  Done
+
+List
+   [Tags]   list
+   @{list}=   Create List  red  black  white
+   LOG  ${list} 
 
 Create List Test
        [Tags]  Create_list
@@ -59,19 +116,55 @@ Get Count Test
        ${count}  Get Count  Yugal  ${str2}
        log  ${count}
 
+Get count
+     [Tags]   count
+     @{source_list} =  Create List  1  2  3  4
+     ${count}=  Get Count  ${source_list}  3
+     LOG  ${count}
+
 Get Length Test
        [Tags]  Get_length
        ${length}  Get Length  ${str2}
        log  ${length}
 
+Get length
+    [Tags]   length
+    @{source_list} =  Create List  1  2  3  4
+    ${length} =  Get Length  ${source_list}
+    LOG  ${length}
+
 Log To Console Test
        [Tags]  To_console
        Log To Console  ${str2}
+
+Log to console
+   [Tags]   console
+   Log To Console  HII
 
 Should Be Empty Test
        [Tags]  Should_be_empty
        Should Be Empty  ${name}
 
+Empty
+    [Tags]  empty
+    @{val}=  Create List
+    Should Be Empty  ${val}  Done
+
 Should Be True Test
        [Tags]  Should_be_true
        Should Be True  ${str1}
+
+Should br true
+   [Tags]   true
+   ${bool}=  Convert To Boolean  ${b}
+   Should Be True  ${bool}
+
+Run keyword
+   [Tags]   run
+   ${value}=  Set Variable  1
+   Run Keyword If  ${value}> 0    function for demo  
+   Run Keyword 		function for demo
+   Run Keyword And Continue On Failure     function for demo
+
+
+

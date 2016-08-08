@@ -1,0 +1,66 @@
+*** Settings ***
+Library    Collections
+Library   BuiltIn
+
+*** Variables ***
+${b}   one
+${c}   1
+${str}   Hii\tBye
+
+*** Keywords ***
+function for demo
+        Log     hello
+
+*** Testcases ***
+Append list
+   @{list}=  Create List  red  black
+   ${result}=  Append To List  ${list}  white
+   Log  ${list}
+
+Combine list
+   @{list}=  Create List  red  black
+   @{list1}=  Create List  orange
+   ${result}=  Combine Lists  ${list}  ${list1}
+   Log  ${result}
+
+Convert to list
+   ${var}=  Set Variable  a  b  c  d
+   ${list}=  Convert To List  ${var}
+   Log  ${list}
+
+Convert to dict
+   @{dict}=  Create Dictionary  a=1  b=2  c=3
+   ${dict1}=    Convert To Dictionary   ${dict}
+   Log  ${dict1}
+
+List equal
+   @{list}=  Create List  abd  blue
+   @{list1}=  Create List  abd  blue
+   ${result}=   Lists Should Be Equal  ${list}  ${list1} 
+   Log  ${result} 
+
+Dict equal
+   ${dict}=   Create Dictionary  Foo=bar  cat=dog  red=blue
+   ${dict1}=  Create Dictionary  Foo=bar  cat=dog  red=blue
+   ${result}=  Dictionaries Should Be Equal  ${dict}  ${dict1}
+   Log  ${result}
+
+Remove value from list
+   ${list}=   Create List  a  b  c  d
+   ${list1}=   Remove Values From List   ${list}   b   c
+   Log   ${list}
+
+Remove from list
+   ${list}=   Create List  a  b  c  d
+   ${return}=  Remove From List  ${list}  1
+   Log  ${list}
+
+Reverse
+   ${list}=  Create List  a  b  c  d
+   ${result}=   Reverse List   ${list}
+   Log  ${list}
+
+Sort
+  ${list}=  Create List  a  1  r  D  3
+   ${result}=   Sort List   ${list}
+   Log  ${list}
