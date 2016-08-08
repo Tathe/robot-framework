@@ -22,8 +22,3 @@ while first<=last and not found:
         else:
             first = midpoint+1
 
-
-
-
-
-

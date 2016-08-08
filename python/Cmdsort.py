@@ -21,9 +21,6 @@ def sortfile(filename):
     sortdata=fdata.split()
     sort(sortdata)
 
-
-
-
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument("-i","--ifile", help="Specify the name of input file ")
@@ -32,7 +29,4 @@ if __name__ == '__main__':
     args=parser.parse_args()
     print args.ifile
     print args.ofile
-
-
-
 

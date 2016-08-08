@@ -26,8 +26,5 @@ def cmdparse(arg) :
 		print "Incorrect Choice"
 	return
 
-
-
-
 cmdparse(sys.argv[1:])
 

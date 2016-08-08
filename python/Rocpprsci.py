@@ -12,7 +12,7 @@ more elegant.
 Input
 
 The human player enters the number of points required for a win. During the play of the game the human player selects
-whether to play a rock, paper, or scissors by using the keyboard. The human player may also end the game by pressing
+whether to pled in a nay a rock, paper, or scissors by using the keyboard. The human player may also end the game by pressing
 the Control-D sequence at any time. (Ending the game early does not allow a winner to be determined if the human player
 is ahead.)'''
 
@@ -58,8 +58,4 @@ while(1) :
     if(count==hcnt) :
         print "Final score :    Human : ", hcnt, "Computer : ", scnt, "Human win........."
         exit()
-
-
-
-
 

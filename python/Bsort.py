@@ -9,3 +9,4 @@ for i  in range(len(sarray)-1,0,-1) :
             sarray[j+1]=temp
 for n1 in sarray :
     print n1
+

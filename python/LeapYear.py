@@ -21,4 +21,3 @@ if (year%4==0) :
 else :
     print "%d is not leap year" % year
 
-

@@ -19,12 +19,3 @@ for j in range(0,set) :
     data=[]
     i=1
 
-
-
-
-
-
-
-
-
-

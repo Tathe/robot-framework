@@ -15,4 +15,3 @@ def valid(uname):
 	else:
 		return False
 
-

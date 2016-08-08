@@ -28,3 +28,4 @@ while no != a :
     no=input()
 
 print "Congratulations! You got it in %d guesses." % count
+

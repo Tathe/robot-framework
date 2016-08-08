@@ -4,9 +4,6 @@ class Node:
         self.data = data
         self.next = None
 
-
-
-
 class createlist:
     def __init__(self,data):
         n=Node(data)
@@ -34,11 +31,6 @@ class createlist:
         else:
             print self.head.data
             self.head = self.head.next
-
-
-
-
-
 
 c=None
 while(True):
@@ -68,8 +60,5 @@ while(True):
 
     else:
         print "Enter correct choice : "
-
-
-
 
 

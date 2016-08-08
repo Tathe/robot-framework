@@ -40,3 +40,4 @@ for row in data:
 cnx.commit()
 cr.close()
 cnx.close()
+

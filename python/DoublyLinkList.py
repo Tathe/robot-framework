@@ -36,13 +36,9 @@ class createlist:
             print tmp.data
 
 
-
-
 c=createlist(12)
 c.add_node(10)
 c.add_node(8)
 c.add_node(7)
 c.reverse_list_traversal()
-
-
 

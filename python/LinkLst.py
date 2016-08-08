@@ -4,9 +4,6 @@ class Node:
         self.data = data
         self.next = None
 
-
-
-
 class createlist:
     def __init__(self,data):
         n=Node(data)
@@ -27,14 +24,9 @@ class createlist:
         else:
             print tmp.data
 
-
-
-
 c=createlist(12)
 c.add_node(10)
 c.add_node(8)
 c.add_node(7)
 c.list_traversal()
-
-
 

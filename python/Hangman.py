@@ -4,15 +4,11 @@ def addchar(wordToGuess,tempGuessedWord,ch):
             tempGuessedWord[i] = ch[0]
     return(tempGuessedWord)
 
-
-
 def result(wordToGuess,tempGuessedWord):
     if (wordToGuess == tempGuessedWord):
         print "Congratulation You Guess it..."
     else:
         print "Sorry... You Loss..."
-
-
 
 wordToGuess = list("yograj")
 tempGuessedWord=list("------")
@@ -37,12 +33,4 @@ while(wguess>0) and (wordToGuess!=tempGuessedWord) :
     print "You Entered : ", wrongGuessed
 else :
     result(wordToGuess,tempGuessedWord)
-
-
-
-
-
-
-
-
 

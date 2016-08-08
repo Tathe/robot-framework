@@ -1,4 +1,3 @@
-
 dic={"Name":"Abc","Phoneno":["90909090","494949494"]}
 dic['Phoneno']=["121212","3333333","9999999"]
 keys=["name","Phoneno"]

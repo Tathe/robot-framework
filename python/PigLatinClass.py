@@ -2,7 +2,6 @@ class Piglatin:
     def __init__(self):
         self.breakLetters="aiouye"
 
-
     def translatePiglatinWord(self,wordToConvert):
         startString=""
         for i in range(0, len(wordToConvert)):
@@ -24,8 +23,8 @@ class Piglatin:
              convertedLine=convertedLine+ " " +self.translatePiglatinWord(lineToTranslate[i])
         print convertedLine
 
-
 if __name__=='__main__':
     obj=Piglatin()
     inputLine=raw_input("Enter sentence : ")
     obj.translate(inputLine)
+

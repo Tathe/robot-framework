@@ -76,6 +76,4 @@ Test for length and count of list and dictionary  [Documentation]  Count and len
 	${dict1}=  Create Dictionary  name=Yograj  address=Chalisgaon
 	${dlength}=  get length  ${dict1} 
 	Log  ${dlength}
-	
-	
-	
+		

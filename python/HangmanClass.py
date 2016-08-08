@@ -7,7 +7,7 @@ class Hangman :
 
     def wrongGuess(self,ch):
         self.maxChance -= 1
-        self.wrongGuessed = self.wrongGuessed + ch
+        self.wrongGuessed = selfed in a n.wrongGuessed + ch
         print "You guessed wrong"
         print "%d Guesses Remaining..." % self.maxChance
 

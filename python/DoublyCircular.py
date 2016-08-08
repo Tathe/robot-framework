@@ -48,9 +48,6 @@ class createlist:
         else:
             self.prev_node()
 
-
-
-
 c=None
 while(True):
     print "=======Menu=========="
@@ -87,8 +84,5 @@ while(True):
 
     else:
         print "Please Enter correct choice : "
-
-
-
 
 

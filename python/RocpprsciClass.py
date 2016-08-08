@@ -52,8 +52,6 @@ class Rcps:
             print "Please enter correct choice ...."
 
 
-
-
 if __name__=='__main__':
     try:
         maxcount = int(raw_input("How many points required for win? "))
@@ -65,9 +63,4 @@ if __name__=='__main__':
             obj.checkWin()
     except KeyboardInterrupt:
         print "byyyyyyyyyyyyyyy"
-
-
-
-
-
-        
+     

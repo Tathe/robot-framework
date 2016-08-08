@@ -9,5 +9,3 @@ elif data["apple_count"]==12 :
     if len(data)==4 :
         print "After, you can call %s , %s, %s to help us eat."  %(data["Friends"][0],data["Friends"][1],data["Friends"][2])
 
-
-
