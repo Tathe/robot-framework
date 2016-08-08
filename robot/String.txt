@@ -1,0 +1,25 @@
+*** Setting ***
+Library  String
+
+*** Variable ***
+${str}  amitpatil
+${x}  Opcito team pune
+${x}  a
+
+
+*** Keywords ***
+
+ 
+*** Test Cases ***
+Get Substring Example
+	Get Substring  ${str}  1 
+
+Remove Substring Example
+	${y}  Remove string  ${x}  team
+	Log  ${y}
+
+Should be string Example
+	Should be string  ${x}
+	 
+	 
+	
